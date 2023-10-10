@@ -1,18 +1,19 @@
-e1 = Elevador()
-#e1.info()
-#e1.mudarAndar(4)
-
-c1 = Chamada(0, 1)
-c2 = Chamada(1, 1)
-c3 = Chamada(5, -1)
-c4 = Chamada(12, -1)
-#c1.info()
-
 filaDeChamadas = []
-filaDeChamadas.append(c1)
-filaDeChamadas.append(c2)
-filaDeChamadas.append(c3)
-filaDeChamadas.append(c4)
+e1 = Elevador()
 
-for i in filaDeChamadas:
-  i.info()
+while True:
+  e1.info()
+  escolha = int(input("O que deseja fazer?\n 0 - Sair \n 1 - Chamar elevador \n"))
+
+  if escolha == 0:
+    for i in filaDeChamadas:
+      i.info()
+    break;
+
+  if escolha == 1:
+    andarCh = int(input("Qual andar?\n"))
+    direcaoCh = int(input("Digite 1 para subir e -1 para descer\n"))
+    novaChamada = Chamada(andarCh, direcaoCh)
+    filaDeChamadas.append(novaChamada)
+
+  

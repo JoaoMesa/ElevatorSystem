@@ -4,12 +4,12 @@ class Chamada:
     self.direcao = direcao
 
   def converte(self):
-    strdirecao = "parado"
+    strdirecao = ""
     if self.direcao == 1:
-      strdirecao = "subindo"
+      strdirecao = "subir"
     elif self.direcao == -1:
-      strdirecao = "descendo"
+      strdirecao = "descer"
     return strdirecao
 
   def info(self):
-      print(f"No andar {self.andar}, está {self.converte()}")
+      print(f"=============================== \nNo andar {self.andar}, quer/está {self.converte()} \n ===============================\n")
