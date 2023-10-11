@@ -26,11 +26,12 @@ class Elevador:
             self.direcao = -1
         elif self.alvo == self.andar:
           self.direcao = 0
+          self.alvo = 0
         
 
     def mudaAndar(self):
-      while self.alvo != self.andar:
-        self.andar += self.direcao
-        self.info()
-      self.direcao = 0
+      self.andar += self.direcao
+      if self.andar == self.alvo:
+        self.direcao = 0
+        self.alvo = 0
       
