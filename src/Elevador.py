@@ -2,7 +2,7 @@ class Elevador:
     andar = 0
     direcao = 0
     alvo = 0
-    
+
     def __init__(self):
         pass
 
@@ -16,17 +16,21 @@ class Elevador:
 
     def info(self):
         print(f" =============================== \nElevador no andar {self.andar}, está {self.converteDirecao()}, indo para {self.alvo}\n ===============================\n")
-    
+
     def mudaAlvo(self, novoAndar):
         self.alvo = novoAndar
         if self.alvo != self.andar:
-          self.direcao = self.alvo - self.andar
-          self.direcao /= self.direcao
-        self.info()
+          if self.alvo>self.andar:
+            self.direcao = 1
+          else:
+            self.direcao = -1
+        elif self.alvo == self.andar:
+          self.direcao = 0
+        
 
     def mudaAndar(self):
-      if self.alvo != self.andar:
+      while self.alvo != self.andar:
         self.andar += self.direcao
-      else:
-        self.direcao = 0
-      self.info()
+        self.info()
+      self.direcao = 0
+      
