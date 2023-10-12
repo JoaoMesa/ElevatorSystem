@@ -4,6 +4,8 @@ from Chamada import Chamada
 class Gerenciador:
 
   def __init__(self):
+      self.limiteinf = int(input("Qual o menor andar do edifício?"))
+      self.limitesup = int(input("Qual o maior andar do edifício?"))
       self.e1 = Elevador()
       self.filaDeChamadas = []
       self.run()
@@ -16,12 +18,15 @@ class Gerenciador:
 
       if escolha == 0:
         break
-  
+
       if escolha == 1:
         ch = Chamada(int(input("Qual andar você está?\n")))
         if ch.andar == self.e1.andar:
           ch = Chamada(int(input("Pra onde você quer ir?\n")))
-        self.filaDeChamadas.append(ch)
+        if ch.andar >= self.limiteinf and ch.andar <= self.limitesup:
+          self.filaDeChamadas.append(ch)
+        else:
+          print("=============================== \n CHAMADA INVÁLIDA \n ===============================\n")
 
       if self.e1.alvo == self.e1.andar and len(self.filaDeChamadas) > 0:
         temp = self.filaDeChamadas[0].andar
@@ -36,5 +41,5 @@ class Gerenciador:
           print(f" =============================== \nCHAMADA CUMPRIDA NO ANDAR {i.andar}\n ===============================\n")
         j+=1
 
-      
-      
+
+
