@@ -10,13 +10,15 @@ while True:
     break
 
   if escolha == 1:
-    ch = Chamada(int(input("Qual andar?\n")))
+    ch = Chamada(int(input("Qual andar você está?\n")))
+    if ch.andar == e1.andar:
+      ch = Chamada(int(input("Pra onde você quer ir?\n")))
     filaDeChamadas.append(ch)
-  
+
   if e1.alvo == e1.andar and len(filaDeChamadas) > 0:
     temp = filaDeChamadas[0].andar
     e1.mudaAlvo(temp)
 
   e1.mudaAndar()
-  if len(filaDeChamadas)> 0 and e1.andar == filaDeChamadas[0].andar: 
+  if len(filaDeChamadas)> 0 and e1.andar == filaDeChamadas[0].andar:
     filaDeChamadas.pop(0)
