@@ -31,9 +31,6 @@ Atualmente, o sistema suporta elevadores individuais, mas o objetivo é estender
     ```
 ## Contato
 
-Meio de contato:
-
-- João Vitor Naves Mesa
 - E-mail: joaomesa@estudante.ufscar.br
 
 
