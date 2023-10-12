@@ -28,5 +28,13 @@ class Gerenciador:
         self.e1.mudaAlvo(temp)
 
       self.e1.mudaAndar()
-      if len(self.filaDeChamadas) > 0 and self.e1.andar == self.filaDeChamadas[0].andar:
-        self.filaDeChamadas.pop(0)
+
+      j = 0
+      for i in self.filaDeChamadas:
+        if i.andar == self.e1.andar:
+          self.filaDeChamadas.pop(j)
+          print(f" =============================== \nCHAMADA CUMPRIDA NO ANDAR {i.andar}\n ===============================\n")
+        j+=1
+
+      
+      
